@@ -31,16 +31,18 @@ public class NetworkServerUI : MonoBehaviour
         CrossPlatformInputManager.RegisterVirtualAxis(m_VVAxis);
 
         NetworkServer.Listen(25000);
+        NetworkServer.RegisterHandler(888, ServerReceiveMessage);
     }
 
-    //private void ServerReceiveMessage(NetworkMessage message)
-    //{
-    //    StringMessage msg = new StringMessage();
-    //    msg.value = message.ReadMessage<StringMessage>().value;
-    //    string[] deltas = msg.value.Split('|');
-    //    m_HVAxis.Update(Convert.ToSingle(deltas[0]));
-    //    m_HVAxis.Update(Convert.ToSingle(deltas[1]));
-    //}
+
+    private void ServerReceiveMessage(NetworkMessage message)
+    {
+        StringMessage msg = new StringMessage();
+        msg.value = message.ReadMessage<StringMessage>().value;
+        string[] deltas = msg.value.Split('|');
+        m_HVAxis.Update(Convert.ToSingle(deltas[0]));
+        m_HVAxis.Update(Convert.ToSingle(deltas[1]));
+    }
 
     // Update is called once per frame
     void Update()

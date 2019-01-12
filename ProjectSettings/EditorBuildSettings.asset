@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/GameIntro.unity
     guid: 409fe649e860d4b4794062be6e011335
-  - enabled: 0
+  - enabled: 1
     path: Assets/VRSampleScenes/Scenes/GameScene.unity
     guid: d8067884ba0d5ab459a463e52199c016
-  - enabled: 1
+  - enabled: 0
     path: Assets/Controller.unity
     guid: 153535342141f4eda89a729b2b84c71c
   m_configObjects: {}
